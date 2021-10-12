@@ -1,0 +1,47 @@
+---
+title: "Untitled"
+author: "Samuel Goëta"
+date: "10/8/2021"
+output: ioslides_presentation
+---
+
+---
+### Les partenaires
+
+
+---
+### Programme du cycle d'ateliers
+
+13/10 : 
+NEC, atelier 1 
+NEC, atelier 2 
+NEC, atelier 3
+
+---
+### Objectifs du cycle d'ateliers 
+
+
+---
+### Au programme aujourd'hui
+
+
+---
+
+class : middle, inverse, center
+
+### Partage des définitions
+
+---
+### Standard
+
+
+---
+### Interopérabilité 
+
+
+---
+### Schéma de données
+
+
+---
+### 
