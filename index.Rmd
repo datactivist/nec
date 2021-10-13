@@ -267,16 +267,38 @@ class:inverse, middle, center
 
 
 ---
-### [Open Contracting Data Standard](https://standard.open-contracting.org/latest/en/)
+### [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/reference?hl=fr)
+
+.pull-left[
+![](img/gtfs.png)
+.footnote[Image : Jungle Bus]
+]
+
+.pull-right[
+![](img/gtfs2.png)
+
+]
+---
+### [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/latest/en/)
 
 <iframe width="940" height="460" src="https://www.youtube.com/embed/Ibq0vEmDDzQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+---
+### [International Aid Transparency Initiative (IATI)](https://www.youtube.com/watch?v=eH-FBw5zFgc)
+
+<iframe width="940" height="460" src="https://www.youtube.com/embed/Ibq0vEmDDzQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-## Positionner une image
+### D'autres exemples dans ce billet de blog
 
-![:abs 30%, 20%, 65%](https://datactivist.coop/images/sticker-3.png)
+[![](img/standard.png)](https://medium.com/datactivist/standards-de-donn%C3%A9es-ouvertes-enseignements-dun-workshop-%C3%A0-londres-3616a5e0fb20)
 
+---
+### La suite sur Klaxoon
+
+[![](img/klaxoon.png)](https://app.klaxoon.com/participate/meeting/BGST9KP)
+
+### [app.klaxoon.com/join/BGST9KP](https://app.klaxoon.com/join/BGST9KP)
 ---
 class: inverse, center, middle
 
