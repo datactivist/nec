@@ -1,0 +1,345 @@
+---
+title: "Projet de recherche : la standardisation des données ouvertes"
+author: "Samuel Goëta, Datactivist"
+date: "`r Sys.Date()`"
+output:
+  SlidesDatactivist::moon_reader:
+    css: [default, datactivist, datactivist-fonts]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: ["macros.js", "matomo.js", "https://platform.twitter.com/widgets.js"]
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+    anchor_sections: false
+params:
+  event: La standardisation des données territoriales
+  slug: nec
+  description: Données et territoires les enjeux de la standardisation des données ouvertes
+  title: Données et territoires les enjeux de la standardisation des données ouvertes
+  image: https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png
+  image_alt: le logo de Datactivist
+---
+
+```{r, echo=FALSE}
+library(metathis)
+meta() %>% 
+  meta_description(params$event) %>% 
+  meta_name("github-repo" = paste0("datactivist/", params$slug)) %>% 
+  meta_viewport() %>% 
+  meta_social(
+    title = params$title,
+    url = paste0("https://datactivist.coop/", params$slug),
+    image = params$image,
+    image_alt = params$image_alt,
+    og_type = "website",
+    og_author = "Datactivist",
+    og_locale = "fr_FR",
+    og_site_name = "Datactivist",
+    twitter_card_type = "summary",
+    twitter_creator = "@datactivi_st")
+
+```
+
+layout: true
+
+<style>
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: #e95459;
+}
+
+</style>
+
+
+`r paste0("<div class='my-footer'><span>", params$event, "</span> <center><div class=logo><a href='https://datactivist.coop/'><img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'></a></div></center></span></div>")` 
+
+
+---
+class:inverse,middle,center
+
+## Elements de contexte
+---
+
+### Les données territoriales, un potentiel à renforcer
+
+<img src="./img/ogd.png" style="float: right;margin:10px"/>
+
+-   Chaque territoire publie les données selon ses compétences mais aussi son patrimoine de données accessible.
+
+-   Les données ne sont pas nommées pareil selon les territoires, **difficile de savoir qui produit quoi.**
+
+-   Surtout, les fichiers ne contiennent pas les mêmes champs et ne donnent pas le même niveau d'information. Les valeurs dans les champs eux-mêmes ne sont pas normalisées.
+
+En conséquence, il est très compliqué de **construire des usages** qui dépassent un seul territoire. **L'impact des données territoriales reste limité**.
+
+---
+
+### La standardisation pour créer des infrastructures de données
+
+Pour démultiplier l'impact des données territoriales, nous avons besoin .red\[**à terme**\] de créer des infrastructures de données.
+
+Quelques caractériques d'une infrastructure : \* **Son encastrement** : comme « coulée » à l'intérieur d'autres structures
+
+-   **Sa transparence** : un soutien invisible des tâches de l'usager
+
+-   **Sa portée** : au-delà d'un événement isolé ou d'une pratique unique
+
+-   **Sa base installée** : l'infrastructure ne vient pas de rien ; elle lutte contre l'inertie de la base installée et hérite des forces et limites de cette base.
+
+-   **Sa visibilité au moment d'une défaillance** : une infrastructure devient visible quand elle est défaillante
+
+.footnote\[Source : Star & Ruhleder (1997), « Vers une écologie de l'infrastructure »,[10.3917/rac.009.0114](https://www.cairn.info/revue-anthropologie-des-connaissances-2010-1-page-114.htm)\]
+
+---
+### Quelques définitions
+
+.pull-left[
+* **Un standard** : "un ensemble de recommandations développées et préconisées par un groupe représentatif d’utilisateurs" ([Wikipedia](https://fr.wikipedia.org/wiki/Standard))
+
+* **Une norme** : selon l'ISO, un document "établi par un consensus et approuvé par un organisme reconnu", qui établit des "lignes directrices ou des caractéristiques" ([Wikipedia](https://fr.wikipedia.org/wiki/Standard))
+]
+
+.pull-right[
+![](img/schema.png)
+]
+
+* **L'Interopérabilité** : "la capacité de deux ou plusieurs réseaux, systèmes, outils, applications ou composants d’échanger facilement des informations de manière sécurisée et efficiente sans gêner l’utilisateur". C'est ce qui permet à différents outils numériques de communiquer pour construire un ensemble cohérent au service d’un ou plusieurs objectifs. 
+---
+
+### Les schémas de données
+
+.pull-left[ Les schémas de données décrivent des **modèles de données** : 
+
+* quels sont les différents champs ? 
+
+* comment les données sont-elles représentées ?
+
+* quelles sont les valeurs possibles ?
+
+* quels champs sont obligatoires ou non ?]
+
+.pull-right[
+![](https://schema.data.gouv.fr/assets/img/logo-schema.2baf95e3.png) 
+]
+
+.footnote[Texte et illustration : [schema.data.gouv.fr](https://schema.data.gouv.fr/)]
+
+
+
+---
+class:inverse
+### Focus sur [schema.data.gouv.fr](https://schema.data.gouv.fr/)
+
+.pull-left[
+* Une initiative d’Etalab (DINUM) de référencement des schémas de données publiques pour la France.
+
+* Référence les standards co-construits avec descommunautés d’usagers et validés mais également des schémas en cours d’investigation et de construction.
+
+* Propose des guides pour créer des schémas de données et de la documentation très complète.
+]
+
+.pull-right[
+![](img/schema.dgf.png)
+]
+---
+
+### Un schéma de données : à quoi ça ressemble ? (1/2)
+
+Voici un exemple de schéma suivant la spécification Table Schema, le schéma lui-même suit un standard. Son contenu commence par une description normalisée du schéma :
+
+![](img/archives.png)
+
+---
+### Un schéma de données : à quoi ça ressemble ? (2/2)
+
+S'en suit ensuite une description normalisée des champs : 
+
+![](img/archives2.png)
+---
+
+### Les schémas référencés sur data.gouv.fr
+
+```{r echo=FALSE,include=FALSE}
+
+library(treemapify)
+library(tidyverse)
+
+schema <- read_csv(file = "schema.csv")
+
+ggplot(schema, aes(area=Nombre, label=Jeu, fill=Nombre)) + 
+  geom_treemap() + 
+  geom_treemap_text(colour = "white", reflow = T, min.size = 0.5) + 
+  labs(title = "Nombre de jeux de données déclarant l'usage de chaque schéma", caption = "Source : schema.data.gouv.fr, 19/10/21")
+# ggsave(filename = "treemap_schema.png", width = 7, height = 4, dpi = "retina")
+```
+
+![](treemap_schema.png)
+
+---
+
+
+class:inverse 
+
+### Focus sur le [Socle Commun de Données Locales (SCDL)](https://scdl.opendatafrance.net/docs/)
+
+.pull-left[
+-   Aider les producteurs à créer et à améliorer la qualité des données qu'ils publient.
+
+-   Faciliter l'exploitation des données publiées par les réutilisateurs (agrégation, consolidation et traitements automatiques).]
+
+.pull-right[ ![](img/scdl.png)]
+
+
+
+---
+class:inverse
+### Focus sur [Validata](https://validata.fr/doku.php)
+
+.pull-left[
+Validata est une plateforme de validation de données ouvertes produites par des acteurs territoriaux. Elle offre à ses utilisateurs la possibilité de vérifier la conformité de ces données par rapport aux modèles définis dans le cadre du Socle Commun des Données Locales (SCDL).
+
+En détectant d'éventuelles erreurs ou anomalies, en amont ou en aval de leur publication, elle aide à harmoniser les données locales ouvertes, elle engage à améliorer leur qualité et elle facilite leur exploitation par les réutilisateurs.
+]
+
+.pull-right[
+![](https://validata.fr/lib/tpl/qualidata/images/logo.png)
+[![](img/validata.png)](https://validata.etalab.studio/table-schema?input=url&url=https%3A%2F%2Fraw.githubusercontent.com%2Fetalab%2Ftransport-base-nationale-covoiturage%2Fmain%2Fbnlc-.csv&schema_name=schema-datagouvfr.etalab%2Fschema-lieux-covoiturage)
+[Fichier source](https://www.data.gouv.fr/fr/datasets/base-nationale-des-lieux-de-covoiturage/)
+]
+---
+
+class:inverse, middle, center
+
+## La standardisation des données, ailleurs
+
+## .red[Quelques exemples internationaux]
+
+---
+### [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/reference?hl=fr)
+
+.pull-left[
+![](img/gtfs.png)
+.footnote[Image : Jungle Bus]
+]
+
+.pull-right[
+![](img/gtfs2.png)
+
+]
+---
+
+### [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/latest/en/)
+
+<iframe width="940" height="460" src="https://www.youtube.com/embed/Ibq0vEmDDzQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+---
+### [International Aid Transparency Initiative (IATI)](https://www.youtube.com/watch?v=eH-FBw5zFgc)
+
+<iframe width="940" height="460" src="https://www.youtube.com/embed/eH-FBw5zFgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+---
+
+class:inverse,center,middle
+
+## Questions de recherche
+
+---
+### Un contexte favorable avec la feuille de route du MCT
+
+![](img/action15.png)
+---
+
+### Objectifs du projet de recherche
+
+<img src="img/openstand.png" style="float: right;margin:10px"/>
+
+-   Comprendre les facteurs de succès des standards
+
+-   Etudier la diversité des méthodes de standardisation des données ouvertes
+
+-   Diffuser les bonnes pratiques de la standardisation
+
+-   Proposer des guides méthodologiques pour accompagner les démarches de standardisation
+
+---
+#### .red[Comprendre les facteurs de succès]
+### La conception des standards
+
+* Quels objets se prêtent plus facilement à une démarche de standardisation ?
+
+* Quels types d'acteurs sont à l'initiative de standards existants ? 
+
+* Peut-on identifier une typologie de facteurs déclencheurs d'une démarche de standardisations ? 
+
+* Quels standards ont été conçus par des producteurs de données (exemple : SCDL) ou réutilisateurs de données (exemple : GTFS) ? Existe-t-il une approche intermédiaire ? Quelle répartition du travail ces deux approches induisent-elles ?
+
+* Quelles méthodologies ont-elles été employées pour concevoir les standards ? Voit-on des points communs ou une typologie d'approches émerger ?
+---
+
+#### .red[Comprendre les facteurs de succès]
+
+### La concertation
+
+-   Qui participe aux processus de concertation ? Qui les anime ?
+
+-   Quelles formes la concertation prend-elle ? Quelles traces en sont gardées sur le web ?
+
+-   Comment débat-on du choix du format (csv ou JSON par exemple), du contenu de chacun des champs, des valeurs prédéfinies, du caractère obligatoire ou non d'un champ... ?
+
+-   Quels aspects sont mis en débat ? Auprès de quelles communautés la concertation est-elle diffusée ? Qui est inclus et qui est exclus ? Qui est sollicité ?
+
+-   Comment se fait la délibération ? Qui décide ?
+
+---
+#### .red[Comprendre les facteurs de succès]
+### La mise en œuvre du standard
+
+* Comment l'accompagnement des producteurs des données est-il proposé ? 
+
+* Quel travail implique la standardisation pour les producteurs de données ? Quels choix ou approches induisent-ils une charge de travail plus conséquente ? Jusqu'à quel stade l'investissement dans la standardisation est-il justifié ?
+
+* Comment impliquer les producteurs de logiciels dans la standardisation des données ? Pourquoi certains acceptent de développer les fonctionnalités d'export au standard et d'autres non ? 
+
+* Quels standards sont les plus utilisés ? Peut-on mesurer leur impact ?
+
+* Comment le standard connaît-il des évolutions ? Dans quel cas le standard évolue-t-il ? Comment préserver (ou non) la compatibilité entre les versions ? 
+
+---
+### Diffuser les bonnes pratiques de standardisation
+
+Voici quelques exemples de livrables qui pourraient être produits dans le cadre du projet : 
+
+1. **Un livret de cas d'usage de la standardisation** : descriptif du standard, conception et mise en oeuvre, acteurs impliqués, évaluation de l'impact
+
+2. **Un guide de la standardisation des données territoriales** avec plusieurs options de méthodologies accompagnant pas à pas la conception d'un standard
+
+3.  **Le développement d'outils** pour faciliter la conception (étude des champs employés dans un domaine ?), la concertation (faciliter la prise en compte des retours) ou la mise en oeuvre d'un standard (outils de suivi comme transport.data.gouv.fr)
+
+
+---
+
+class: inverse, center, middle
+
+# Merci !
+
+Contact : [samuel\@datactivist.coop](mailto:samuel@datactivist.coop)

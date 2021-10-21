@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Projet de recherche : la standardisation des données ouvertes</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Samuel Goëta, Datactivist" />
+    <meta name="date" content="2021-10-19" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/datactivist.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/datactivist-fonts.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, orientation=auto"/>
+    <meta name="description" content="La standardisation des données territoriales"/>
+    <meta name="github-repo" content="datactivist/nec"/>
+    <meta name="twitter:title" content="Données et territoires les enjeux de la standardisation des données ouvertes"/>
+    <meta name="twitter:description" content="La standardisation des données territoriales"/>
+    <meta name="twitter:url" content="https://datactivist.coop/nec"/>
+    <meta name="twitter:image" content="https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png"/>
+    <meta name="twitter:image:alt" content="le logo de Datactivist"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:creator" content="@datactivi_st"/>
+    <meta name="twitter:site" content="@datactivi_st"/>
+    <meta property="og:title" content="Données et territoires les enjeux de la standardisation des données ouvertes"/>
+    <meta property="og:description" content="La standardisation des données territoriales"/>
+    <meta property="og:url" content="https://datactivist.coop/nec"/>
+    <meta property="og:image" content="https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/logo.png"/>
+    <meta property="og:image:alt" content="le logo de Datactivist"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:site_name" content="Datactivist"/>
+    <meta property="article:author" content="Datactivist"/>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Projet de recherche : la standardisation des données ouvertes
+### Samuel Goëta, Datactivist
+### 2021-10-19
+
+---
+
+
+
+
+layout: true
+
+&lt;style&gt;
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: #e95459;
+}
+
+&lt;/style&gt;
+
+
+&lt;div class='my-footer'&gt;&lt;span&gt;La standardisation des données territoriales&lt;/span&gt; &lt;center&gt;&lt;div class=logo&gt;&lt;a href='https://datactivist.coop/'&gt;&lt;img src='https://github.com/datactivist/slides_datactivist/raw/master/inst/rmarkdown/templates/xaringan/resources/img/fond_noir_monochrome.png' width='100px'&gt;&lt;/a&gt;&lt;/div&gt;&lt;/center&gt;&lt;/span&gt;&lt;/div&gt; 
+
+
+---
+class:inverse,middle,center
+
+## Elements de contexte
+---
+
+### Les données territoriales, un potentiel à renforcer
+
+&lt;img src="./img/ogd.png" style="float: right;margin:10px"/&gt;
+
+-   Chaque territoire publie les données selon ses compétences mais aussi son patrimoine de données accessible.
+
+-   Les données ne sont pas nommées pareil selon les territoires, **difficile de savoir qui produit quoi.**
+
+-   Surtout, les fichiers ne contiennent pas les mêmes champs et ne donnent pas le même niveau d'information. Les valeurs dans les champs eux-mêmes ne sont pas normalisées.
+
+En conséquence, il est très compliqué de **construire des usages** qui dépassent un seul territoire. **L'impact des données territoriales reste limité**.
+
+---
+
+### La standardisation pour créer des infrastructures de données
+
+Pour démultiplier l'impact des données territoriales, nous avons besoin .red\[**à terme**\] de créer des infrastructures de données.
+
+Quelques caractériques d'une infrastructure : \* **Son encastrement** : comme « coulée » à l'intérieur d'autres structures
+
+-   **Sa transparence** : un soutien invisible des tâches de l'usager
+
+-   **Sa portée** : au-delà d'un événement isolé ou d'une pratique unique
+
+-   **Sa base installée** : l'infrastructure ne vient pas de rien ; elle lutte contre l'inertie de la base installée et hérite des forces et limites de cette base.
+
+-   **Sa visibilité au moment d'une défaillance** : une infrastructure devient visible quand elle est défaillante
+
+.footnote\[Source : Star &amp; Ruhleder (1997), « Vers une écologie de l'infrastructure »,[10.3917/rac.009.0114](https://www.cairn.info/revue-anthropologie-des-connaissances-2010-1-page-114.htm)\]
+
+---
+### Quelques définitions
+
+.pull-left[
+* **Un standard** : "un ensemble de recommandations développées et préconisées par un groupe représentatif d’utilisateurs" ([Wikipedia](https://fr.wikipedia.org/wiki/Standard))
+
+* **Une norme** : selon l'ISO, un document "établi par un consensus et approuvé par un organisme reconnu", qui établit des "lignes directrices ou des caractéristiques" ([Wikipedia](https://fr.wikipedia.org/wiki/Standard))
+]
+
+.pull-right[
+![](img/schema.png)
+]
+
+* **L'Interopérabilité** : "la capacité de deux ou plusieurs réseaux, systèmes, outils, applications ou composants d’échanger facilement des informations de manière sécurisée et efficiente sans gêner l’utilisateur". C'est ce qui permet à différents outils numériques de communiquer pour construire un ensemble cohérent au service d’un ou plusieurs objectifs. 
+---
+
+### Les schémas de données
+
+.pull-left[ Les schémas de données décrivent des **modèles de données** : 
+
+* quels sont les différents champs ? 
+
+* comment les données sont-elles représentées ?
+
+* quelles sont les valeurs possibles ?
+
+* quels champs sont obligatoires ou non ?]
+
+.pull-right[
+![](https://schema.data.gouv.fr/assets/img/logo-schema.2baf95e3.png) 
+]
+
+.footnote[Texte et illustration : [schema.data.gouv.fr](https://schema.data.gouv.fr/)]
+
+
+
+---
+class:inverse
+### Focus sur [schema.data.gouv.fr](https://schema.data.gouv.fr/)
+
+.pull-left[
+* Une initiative d’Etalab (DINUM) de référencement des schémas de données publiques pour la France.
+
+* Référence les standards co-construits avec descommunautés d’usagers et validés mais également des schémas en cours d’investigation et de construction.
+
+* Propose des guides pour créer des schémas de données et de la documentation très complète.
+]
+
+.pull-right[
+![](img/schema.dgf.png)
+]
+---
+
+### Un schéma de données : à quoi ça ressemble ? (1/2)
+
+Voici un exemple de schéma suivant la spécification Table Schema, le schéma lui-même suit un standard. Son contenu commence par une description normalisée du schéma :
+
+![](img/archives.png)
+
+---
+### Un schéma de données : à quoi ça ressemble ? (2/2)
+
+S'en suit ensuite une description normalisée des champs : 
+
+![](img/archives2.png)
+---
+
+### Les schémas référencés sur data.gouv.fr
+
+
+
+![](treemap_schema.png)
+
+---
+
+
+class:inverse 
+
+### Focus sur le [Socle Commun de Données Locales (SCDL)](https://scdl.opendatafrance.net/docs/)
+
+.pull-left[
+-   Aider les producteurs à créer et à améliorer la qualité des données qu'ils publient.
+
+-   Faciliter l'exploitation des données publiées par les réutilisateurs (agrégation, consolidation et traitements automatiques).]
+
+.pull-right[ ![](img/scdl.png)]
+
+
+
+---
+class:inverse
+### Focus sur [Validata](https://validata.fr/doku.php)
+
+.pull-left[
+Validata est une plateforme de validation de données ouvertes produites par des acteurs territoriaux. Elle offre à ses utilisateurs la possibilité de vérifier la conformité de ces données par rapport aux modèles définis dans le cadre du Socle Commun des Données Locales (SCDL).
+
+En détectant d'éventuelles erreurs ou anomalies, en amont ou en aval de leur publication, elle aide à harmoniser les données locales ouvertes, elle engage à améliorer leur qualité et elle facilite leur exploitation par les réutilisateurs.
+]
+
+.pull-right[
+![](https://validata.fr/lib/tpl/qualidata/images/logo.png)
+[![](img/validata.png)](https://validata.etalab.studio/table-schema?input=url&amp;url=https%3A%2F%2Fraw.githubusercontent.com%2Fetalab%2Ftransport-base-nationale-covoiturage%2Fmain%2Fbnlc-.csv&amp;schema_name=schema-datagouvfr.etalab%2Fschema-lieux-covoiturage)
+[Fichier source](https://www.data.gouv.fr/fr/datasets/base-nationale-des-lieux-de-covoiturage/)
+]
+---
+
+class:inverse, middle, center
+
+## La standardisation des données, ailleurs
+
+## .red[Quelques exemples internationaux]
+
+---
+### [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/reference?hl=fr)
+
+.pull-left[
+![](img/gtfs.png)
+.footnote[Image : Jungle Bus]
+]
+
+.pull-right[
+![](img/gtfs2.png)
+
+]
+---
+
+### [Open Contracting Data Standard (OCDS)](https://standard.open-contracting.org/latest/en/)
+
+&lt;iframe width="940" height="460" src="https://www.youtube.com/embed/Ibq0vEmDDzQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;
+
+&lt;/iframe&gt;
+
+---
+### [International Aid Transparency Initiative (IATI)](https://www.youtube.com/watch?v=eH-FBw5zFgc)
+
+&lt;iframe width="940" height="460" src="https://www.youtube.com/embed/eH-FBw5zFgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+---
+
+class:inverse,center,middle
+
+## Questions de recherche
+
+---
+### Un contexte favorable avec la feuille de route du MCT
+
+![](img/action15.png)
+---
+
+### Objectifs du projet de recherche
+
+&lt;img src="img/openstand.png" style="float: right;margin:10px"/&gt;
+
+-   Comprendre les facteurs de succès des standards
+
+-   Etudier la diversité des méthodes de standardisation des données ouvertes
+
+-   Diffuser les bonnes pratiques de la standardisation
+
+-   Proposer des guides méthodologiques pour accompagner les démarches de standardisation
+
+---
+#### .red[Comprendre les facteurs de succès]
+### La conception des standards
+
+* Quels objets se prêtent plus facilement à une démarche de standardisation ?
+
+* Quels types d'acteurs sont à l'initiative de standards existants ? 
+
+* Peut-on identifier une typologie de facteurs déclencheurs d'une démarche de standardisations ? 
+
+* Quels standards ont été conçus par des producteurs de données (exemple : SCDL) ou réutilisateurs de données (exemple : GTFS) ? Existe-t-il une approche intermédiaire ? Quelle répartition du travail ces deux approches induisent-elles ?
+
+* Quelles méthodologies ont-elles été employées pour concevoir les standards ? Voit-on des points communs ou une typologie d'approches émerger ?
+---
+
+#### .red[Comprendre les facteurs de succès]
+
+### La concertation
+
+-   Qui participe aux processus de concertation ? Qui les anime ?
+
+-   Quelles formes la concertation prend-elle ? Quelles traces en sont gardées sur le web ?
+
+-   Comment débat-on du choix du format (csv ou JSON par exemple), du contenu de chacun des champs, des valeurs prédéfinies, du caractère obligatoire ou non d'un champ... ?
+
+-   Quels aspects sont mis en débat ? Auprès de quelles communautés la concertation est-elle diffusée ? Qui est inclus et qui est exclus ? Qui est sollicité ?
+
+-   Comment se fait la délibération ? Qui décide ?
+
+---
+#### .red[Comprendre les facteurs de succès]
+### La mise en œuvre du standard
+
+* Comment l'accompagnement des producteurs des données est-il proposé ? 
+
+* Quel travail implique la standardisation pour les producteurs de données ? Quels choix ou approches induisent-ils une charge de travail plus conséquente ? Jusqu'à quel stade l'investissement dans la standardisation est-il justifié ?
+
+* Comment impliquer les producteurs de logiciels dans la standardisation des données ? Pourquoi certains acceptent de développer les fonctionnalités d'export au standard et d'autres non ? 
+
+* Quels standards sont les plus utilisés ? Peut-on mesurer leur impact ?
+
+* Comment le standard connaît-il des évolutions ? Dans quel cas le standard évolue-t-il ? Comment préserver (ou non) la compatibilité entre les versions ? 
+
+---
+### Diffuser les bonnes pratiques de standardisation
+
+Voici quelques exemples de livrables qui pourraient être produits dans le cadre du projet : 
+
+1. **Un livret de cas d'usage de la standardisation** : descriptif du standard, conception et mise en oeuvre, acteurs impliqués, évaluation de l'impact
+
+2. **Un guide de la standardisation des données territoriales** avec plusieurs options de méthodologies accompagnant pas à pas la conception d'un standard
+
+3.  **Le développement d'outils** pour faciliter la conception (étude des champs employés dans un domaine ?), la concertation (faciliter la prise en compte des retours) ou la mise en oeuvre d'un standard (outils de suivi comme transport.data.gouv.fr)
+
+
+---
+
+class: inverse, center, middle
+
+# Merci !
+
+Contact : [samuel\@datactivist.coop](mailto:samuel@datactivist.coop)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script src="matomo.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>\n"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
